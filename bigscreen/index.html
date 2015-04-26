@@ -72,8 +72,8 @@ function smoothZoomIn (map, max, cnt) {
 		}));
 		map.panTo(myPosition);
 		map.setCenter(myPosition);
-		smoothZoomIn(map,12,map.getZoom());
-		map.panTo(wth_map);
+		setTimeout(function(){smoothZoomIn(map,12,map.getZoom());},3000);
+		setTimeout(function(){map.panTo(wth_map);},3000);
 	}
 	
 	
@@ -86,10 +86,6 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	myDataRef.on('child_added', function(snapshot) {
 		var newTrip = snapshot.val();
 		addMarker(newTrip.origin.latitude,newTrip.origin.longitude);	
-		map.panTo(myPosition);
-		smoothZoomIn(map,12,map.getZoom());
-		setTimeout(function(){smoothZoomOut(map,4,map.getZoom());},5000);
-		setTimeout(function(){map.panTo(wth_map);},7000);
 		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),1000);
 	})
 </script>
