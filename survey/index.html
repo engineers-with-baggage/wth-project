@@ -15,11 +15,18 @@ SurveyForm
 	<!-- Survey Form -->
     <form>
 
-        <input type="text" id="name" name="name" placeholder="What is your name?"/><br>
-        <label for="origin">Departure City: </label>
-        <label for="destination"></label>
-        <input type="text" id="destination" name="destination" placeholder="Where are you going?"/><br>
-        
+        <input type="text" id="name" name="name" placeholder="What is your name?"s
+       
+       	<div class="ui-widget">
+<label for="city">Your city: </label>
+<input id="city">
+Powered by <a href="http://sandbox.amadeus.com">Amadeus Travel Innovation Sandbox</a>
+</div>
+<div class="ui-widget" style="margin-top:2em; font-family:Arial">
+Result:
+<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
+</div>
+
 	</form>
 
 </div>	<!-- End Survey Form -->
@@ -27,16 +34,6 @@ SurveyForm
 <!-- ============================================================================
 Get Airport
 ============================================================================= -->
-<div class="ui-widget">
-<label for="city">Your city: </label>
-<input id="city">
-</div>
-	<div class="ui-widget" style="margin-top:2em; font-family:Arial">
-	Result:
-	<div id="log" style="height: 200px; width: 300px; overflow: auto;" class="ui-widget-content"></div>
-</div> <!-- End Get Airport -->
-
-
 
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
 <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
