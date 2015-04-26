@@ -17,3 +17,25 @@ var myObj = {
 };
 
 var stuff = myObj.origin.code;
+
+
+
+// For Will
+
+// Option 1
+
+var cityInfo = {
+
+	"city": "NameOfCity",
+	"country": "NameOfCountry",
+	"lat": "##.#####",
+	"long": "##.####"
+
+};
+
+// Option 2
+
+var cityInfo = {
+	"city": ["NameOfCity","NameOfCountry"],
+	"coords": ["##.####", "##.####"]
+};
