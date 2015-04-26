@@ -73,7 +73,7 @@ function smoothZoomIn (map, max, cnt) {
 		map.panTo(myPosition);
 		map.setCenter(myPosition);
 		setTimeout(function(){smoothZoomIn(map,12,map.getZoom());},3000);
-		setTimeout(function(){smoothZoomOut(map,8,map.getZoom());},3000);
+		setTimeout(function(){smoothZoomOut(map,7,map.getZoom());},5000);
 
 //		setTimeout(function(){map.panTo(wth_map);},3000);
 	}
@@ -87,9 +87,8 @@ function smoothZoomIn (map, max, cnt) {
     	var myDataRef = new Firebase(' https://amber-inferno-2234.firebaseio.com/');
 	myDataRef.on('child_added', function(snapshot) {
 		var newTrip = snapshot.val();
-		setTimeout(addMarker(newTrip.origin.latitude,newTrip.origin.longitude),2000);
-		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),2000);
-		setTimeout(addMarker(newTrip.origin.latitude,newTrip.origin.longitude),2000);
+		setTimeout(addMarker(newTrip.origin.latitude,newTrip.origin.longitude),1000);
+		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),8000);
 	});
 </script>
 
