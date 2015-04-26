@@ -88,7 +88,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 		addMarker(newTrip.origin.latitude,newTrip.origin.longitude);	
 		map.panTo(myPosition);
 		smoothZoomIn(map,12,map.getZoom());
-		smoothZoomOut(map,4,map.getZoom());},5000);
+		setTimeout(function(){smoothZoomOut(map,4,map.getZoom());},5000);
 		setTimeout(function(){map.panTo(wth_map);},7000);
 		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),1000);
 	})
