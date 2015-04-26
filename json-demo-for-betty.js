@@ -1,4 +1,4 @@
-{
+var myObj = {
 	"name": "Blake",
 	"origin": {
 		"code": "ATL",
@@ -14,4 +14,6 @@
 		"hometownTip": "The Varsity isn't that great, but you still gotta go."
 	},
 	"favoriteIceCream": ["chocolate","pistacio"]
-}
+};
+
+var stuff = myObj.origin.code;
