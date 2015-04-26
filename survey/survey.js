@@ -1,4 +1,16 @@
 $(function() {
+<<<<<<< HEAD
+=======
+	// Survey Form
+	$('#surveyForm').on('submit', function(e){
+		var data = $(this).serializeJSON();
+		e.preventDefault();
+		console.log(data);
+	});
+
+	// Autocomplete Stuff
+
+>>>>>>> 9dfb6a303d23f85ee26d285a9db9a994bb4e07dd
 	function log( message ) {
 		$( "<div>" ).text( message ).prependTo( "#log" );
 		$( "#log" ).scrollTop( 0 );
