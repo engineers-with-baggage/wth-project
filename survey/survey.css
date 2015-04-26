@@ -61,6 +61,12 @@ body{
     background-size: 100% auto;
 }
 
+.wth-purpose{
+    background-image: url('pic2.jpg');
+    opacity: 3;
+    background-size: 100% auto;
+}
+
 .wth-name div, 
 .wth-destination div,
 .wth-purpose div {
@@ -101,11 +107,6 @@ padding-top: 40%;
     width: 30%; 
     font-size: 40pt;
 }
-
-
-
-
-
 
 
 
