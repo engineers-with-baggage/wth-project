@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+	<title>API demo</title>
+</head>
+<body>
+	<div id="output"></div>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	<script>
+		(function(){
+			var myDataRef = new Firebase('https://amber-inferno-2234.firebaseio.com/');
+			myDataRef.on('child_added', function(snapshot) {
+		        var message = snapshot.val();
+		        console.log('output', message);
+		        $('#output').append(message);
+		    });
+		})();
+	</script>
+</body>
+</html>
