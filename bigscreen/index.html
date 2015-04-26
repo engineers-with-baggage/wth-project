@@ -85,7 +85,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
     	var myDataRef = new Firebase(' https://amber-inferno-2234.firebaseio.com/');
 	myDataRef.on('child_added', function(snapshot) {
 		var newTrip = snapshot.val();
-		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),2000);
+		setTimeout(addMarker(newTrip.origin.latitude,newTrip.origin.longitude),2000);
 		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),2000);
 	})
 </script>
