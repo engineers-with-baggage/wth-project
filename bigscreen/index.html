@@ -1,113 +1,17 @@
+<!doctype html>
 <html>
 <head>
-<LINK REL=StyleSheet HREF='http://blakeabbenante.com/styles/stylesheet_new.css' TYPE='text/css' MEDIA=screen>
-<meta name='viewport' content='initial-scale=1.0, user-scalable=no' />
- <script src='https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'></script>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
-
-
-<script type='text/javascript'>
-var wth_map = new google.maps.LatLng(39.8282, -98.5795);
-var markers = [];
-var iterator = 0;
-var map;
-	
-var wth_infowindow = new google.maps.InfoWindow({
-        content: ''
-		});
-var obj;
-var xhr;
-	
-function initialize() {
-    var mapOptions = 
-        {
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP, center: wth_map
-        };
-		
-        map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-    }
-	
-function smoothZoomIn (map, max, cnt) {
-    if (cnt >= max) {
-            return;
-        }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            self.smoothZoomIn(map, max, cnt + 1);
-        });
-        setTimeout(function(){map.setZoom(cnt)}, 200);
-		}
-	}  
-	function smoothZoomOut (map, target, current) {
-    if (current <= target) {
-            return;
-        }
-    else {
-        z = google.maps.event.addListener(map, 'zoom_changed', function(event){
-            google.maps.event.removeListener(z);
-            self.smoothZoomOut(map, target, current - 1);
-        });
-        setTimeout(function(){map.setZoom(current)}, 300);
-		}
-	}  	
-	
-	function centerMap() {
-		iterator = Number(document.getElementById('loopcounter').value);
-		myPosition =  new google.maps.LatLng(marker_lat[iterator],marker_long[iterator]);
-		map.setCenter(myPosition);
-	}	
-	
-	function addMarker(myLat,myLong) {
-		
-		myPosition =  new google.maps.LatLng(myLat,myLong);
-		markers.push(new google.maps.Marker({
-			position: myPosition,
-			map: map,
-			draggable: false,
-			animation: google.maps.Animation.DROP
-			
-		}));
-		map.panTo(myPosition);
-		map.setCenter(myPosition);
-		setTimeout(function(){smoothZoomIn(map,12,map.getZoom());},3000);
-		setTimeout(function(){smoothZoomOut(map,7,map.getZoom());},5000);
-
-//		setTimeout(function(){map.panTo(wth_map);},3000);
-	}
-	
-	
-//google.maps.event.addDomListener(window, 'load', initialize);
-    
-</script>
-
-<script>
-    	var myDataRef = new Firebase(' https://amber-inferno-2234.firebaseio.com/');
-	myDataRef.on('child_added', function(snapshot) {
-		var newTrip = snapshot.val();
-		setTimeout(addMarker(newTrip.origin.latitude,newTrip.origin.longitude),1000);
-		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),8000);
-	});
-</script>
-
-
-<script type='text/javascript'>
-$(document).ready(function(){
-	
-});
-</script>
-
-
+	<title>Big-Screen</title>
+	<link rel="stylesheet" href="bigscreen.css">
+	<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.css' rel='stylesheet' />
 </head>
+<body>
+	<div class="map" id="mapArea"></div>
+	<h2 class="cta">Go to http://git.io/vfDkU to add your journey</h2>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+	<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.8/mapbox.js'></script>
+	<script src="bigscreen.js"></script>
 
-<body onload='initialize()'>
- <div id='container'>
-	  <div id='nav'></div>
-      <div id='map_canvas'></div>
-	  <div id='directionsPanel'></div>
-</div>
-        
 </body>
 </html>
