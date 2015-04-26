@@ -57,6 +57,7 @@ body{
 
 .wth-destination{
     background-image: url('plane2.jpg');
+    opacity: 3;
     background-size: 100% auto;
 }
 
@@ -86,6 +87,10 @@ padding-top: 40%;
     outline: none;
     text-align: center;
     margin: auto auto;
+    color: #999999;
+}
+.wth-destination input{
+    color: #FFFFFF;
 }
 
 .wth-destination label{
@@ -95,7 +100,6 @@ padding-top: 40%;
 .wth-purpose input{
     width: 30%; 
     font-size: 40pt;
-
 }
 
 
