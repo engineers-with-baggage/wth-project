@@ -48,17 +48,47 @@ body{
 .wth-purpose, .wth-lookup{
     height: 100vh;
     width: 100vw;
+    display: table;
 }
 
-.wth-name label{
-    color: #999999;
+.wth-name div, 
+.wth-destination div,
+.wth-purpose div {
+display: table-cell;
+margin: auto auto;
+text-align: center;
+padding-top: 40%;
 }
-.wth-name input{
-    border: 2px solid blue;
+
+.wth-name label,
+.wth-destination label{
+    color: #999999;
+    font-size: 18pt;
+    text-align: center;
+    margin: auto auto;
+}
+.wth-name input,
+.wth-destination input{
+    background-color: transparent;
+    border: 0;
+    border-bottom: solid 2px #999999;
+    box-shadow: none;
+    font-size: 36pt;
+    outline: none;
+    text-align: center;
+    margin: auto auto;
 }
 
 .wth-destination label{
     color: #FFFFFF;
+}
+
+.wth-purpose input{
+    width: 30%; 
+}
+
+.wth-label{
+    padding: 10px;
 }
 
 
