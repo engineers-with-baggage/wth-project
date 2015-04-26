@@ -13,7 +13,7 @@
 			myDataRef.on('child_added', function(snapshot) {
 		        var message = snapshot.val();
 		        console.log('output', message);
-		        $('#output').append(message);
+		        $('#output').append('<p>' + message.name + '</p>');
 		    });
 		})();
 	</script>
