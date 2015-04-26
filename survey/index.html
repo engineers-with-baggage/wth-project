@@ -15,18 +15,26 @@ SurveyForm
 	<!-- Survey Form -->
     <form id="surveyForm">
 
-		<label for="name">What is your name?</label>
-        <input type="text" id="name" name="name" placeholder="What is your name?"/><br>
-        <!-- <label for="origin">Departure City: </label> -->
-        <input type="hidden" id="origin" name="origin" value="Boston"/>
-    	<label for="origin">Destination City: </label>
-        <label for="destination"></label>
-        <input type="text" id="destination" name="destination" placeholder="Where are you going?"/><br>
-        <p>Work or fun?</p>
-        <label for="work"><input type="radio" name="travelType" id="work" value="Work">Work</label>
-        <label for="fun"><input type="radio" name="travelType" id="fun" value="Fun">Fun</label>
-        <br>
-        <input type="submit">
+        <div class="wth-name mint-1 helv">
+            <label for="name">WHAT'S YOUR NAME</label><br>
+            <input type="text" id="name" name="name"/>
+        </div>
+
+        <div>
+        <!-- For now, all travelers depart from Boston -->
+            <!-- <label for="origin">Departure City: </label> -->
+            <input type="hidden" id="origin" name="origin" value="Boston"/>
+        </div>
+
+        <div class="wth-destination mint-2 helv">
+            <label for="destination">WHERE ARE YOU GOING</label><br>
+            <input type="text" id="destination" name="destination" placeholder=""/><br>
+        </div>
+
+        <div class="wth-purpose mint-3 helv">
+            <label for="work"><input type="button" name="travelType" id="work" value="WORK"/>
+            <label for="fun"><input type="button" name="travelType" id="fun" value="PLAY"/>
+        </div>
 
 	</form>
 
