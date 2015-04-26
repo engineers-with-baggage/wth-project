@@ -55,6 +55,11 @@ body{
     background-image: url('cloud.jpeg');
 }
 
+.wth-destination{
+    background-image: url('plane2.jpg');
+    background-size: 100% auto;
+}
+
 .wth-name div, 
 .wth-destination div,
 .wth-purpose div {
