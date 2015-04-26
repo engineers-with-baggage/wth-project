@@ -86,7 +86,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	myDataRef.on('child_added', function(snapshot) {
 		var newTrip = snapshot.val();
 		addMarker(newTrip.origin.latitude,newTrip.origin.longitude);	
-		addMarker(newTrip.destination.latitude,newTrip.destination.longitude);
+		setTimeout(addMarker(newTrip.destination.latitude,newTrip.destination.longitude),1000);
 	})
 </script>
 
