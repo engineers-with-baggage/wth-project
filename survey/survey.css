@@ -51,6 +51,10 @@ body{
     display: table;
 }
 
+.wth-name div{
+    background-image: url('cloud.jpeg');
+}
+
 .wth-name div, 
 .wth-destination div,
 .wth-purpose div {
